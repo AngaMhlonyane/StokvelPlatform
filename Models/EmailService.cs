@@ -1,4 +1,6 @@
-﻿namespace StokvelPlatform.Models
+﻿using MimeKit;
+
+namespace StokvelPlatform.Models
 {
     public class EmailService
     {
