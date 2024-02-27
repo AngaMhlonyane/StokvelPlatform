@@ -1,0 +1,33 @@
+﻿@model InvestementPackage
+@{
+    ViewData["Title"] = "Fund";
+}
+
+@if (ViewBag.RequestStatus != "")
+{
+    <p>Complited</p>
+}
+
+<form asp-action="Create" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Name" class="control-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="MinimumInvestment" class="control-label"></label>
+        <input asp-for="MinimumInvestment" class="form-control" />
+        <span asp-validation-for="MinimumInvestment" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="MaximumInvestment" class="control-label"></label>
+        <input asp-for="MaximumInvestment" class="form-control" />
+        <span asp-validation-for="MaximumInvestment" class="text-danger"></span>
+    </div>
+    <!-- Add other fields here -->
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+
+</form>

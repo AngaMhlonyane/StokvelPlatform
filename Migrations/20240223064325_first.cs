@@ -56,6 +56,22 @@ namespace StokvelPlatform.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "InvestementPackage",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    MinimumInvestment = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    MaximumInvestment = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    LastModified = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_InvestementPackage", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",
                 columns: table => new
                 {
@@ -224,6 +240,9 @@ namespace StokvelPlatform.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "InvestementPackage");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");
